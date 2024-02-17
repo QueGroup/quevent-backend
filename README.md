@@ -1,8 +1,4 @@
 
-<div id="header" align="center" p >
-    <img src="https://media.giphy.com/media/QXwtfadqo7wbfmT46H/giphy.gif" width="300"/>
-</div>
-
 # __<p size="100" align="center">🚀 Quevent 🚀</p>__
 
 ## 🛠️ Used Technology
