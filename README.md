@@ -21,7 +21,7 @@
   
 
 ## 📄 License 
-**This project is licensed under the** [Creative Commons Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0)](LICENSE)
+**This project is licensed under the** [GPL-3.0 License](LICENSE)
 
 
 <div align="center">
