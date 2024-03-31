@@ -1,36 +1,36 @@
-databaseChangelog:
+databaseChangeLog:
   - include:
       file: db/changelog/changeset/create-events-table.yaml
-  - include:
-      file: db/changelog/changeset/create-payment-gateways-table.yaml
-  - include:
-      file: db/changelog/changeset/create-order-statuses-table.yaml
-  - include:
-      file: db/changelog/changeset/create-affiliates-table.yaml
-  - include:
-      file: db/changelog/changeset/create-countries-table.yaml
-  - include:
-      file: db/changelog/changeset/create-accounts-table.yaml
-  - include:
-      file: db/changelog/changeset/create-order-items-table.yaml
-  - include:
-      file: db/changelog/changeset/create-reserved-tickets-table.yaml
-  -include:
-      file: db/changelog/changeset/create-account-payment-gateways-table.yaml
-  -include:
-      file: db/changelog/changeset/create-event-images-table.yaml
-  -include:
-      file: db/changelog/changeset/create-users-table.yaml
-  - include:
-      file: db/changelog/chageset/create-password-resets-table.yaml
-  - include:
-      file: db/changelog/chageset/create-attendees-table.yaml
-  - include:
-      file: db/changelog/chageset/create-event-stats-table.yaml
-  - include:
-      file: db/changelog/chageset/create-user-photos-table.yaml
-  - include:
-      file: db/changelog/chageset/create-orders-table.yaml
+#  - include:
+#      file: db/changelog/changeset/create-payment-gateways-table.yaml
+#  - include:
+#      file: db/changelog/changeset/create-order-statuses-table.yaml
+#  - include:
+#      file: db/changelog/changeset/create-affiliates-table.yaml
+#  - include:
+#      file: db/changelog/changeset/create-countries-table.yaml
+#  - include:
+#      file: db/changelog/changeset/create-accounts-table.yaml
+#  - include:
+#      file: db/changelog/changeset/create-order-items-table.yaml
+#  - include:
+#      file: db/changelog/changeset/create-reserved-tickets-table.yaml
+#  - include:
+#      file: db/changelog/changeset/create-account-payment-gateways-table.yaml
+#  - include:
+#      file: db/changelog/changeset/create-event-images-table.yaml
+#  - include:
+#      file: db/changelog/changeset/create-users-table.yaml
+#  - include:
+#      file: db/changelog/chageset/create-password-resets-table.yaml
+#  - include:
+#      file: db/changelog/chageset/create-attendees-table.yaml
+#  - include:
+#      file: db/changelog/chageset/create-event-stats-table.yaml
+#  - include:
+#      file: db/changelog/chageset/create-user-photos-table.yaml
+#  - include:
+#      file: db/changelog/chageset/create-orders-table.yaml
 
 
 

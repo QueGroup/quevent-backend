@@ -1,1 +1,152 @@
-
+databaseChangeLog:
+  - changeSet:
+    id: create-events
+    author: Egor Avdeev
+    changes:
+      - createTable:
+          tableName: events
+          columns:
+            - column:
+                autoIncrement: true
+                constraints:
+                  nullable: false
+                  primaryKey: true
+                  primaryKeyName: events_pkey
+                name: id
+                type: INTEGER
+            - column:
+                constraints:
+                  nullable: false
+                name: title
+                type: VARCHAR(255)
+            - column:
+                name: location
+                type: VARCHAR(255)
+            - column:
+                constraints:
+                  nullable: false
+                name: type
+                type: VARCHAR(255)
+            - column:
+                name: image_path
+                type: VARCHAR(255)
+            - column:
+                constraints:
+                  nullable: false
+                name: description
+                type: TEXT
+            - column:
+                name: start_date
+                type: TIMESTAMP WITHOUT TIME ZONE
+            - column:
+                name: end_date
+                type: TIMESTAMP WITHOUT TIME ZONE
+            - column:
+                name: on_sale_date
+                type: TIMESTAMP WITHOUT TIME ZONE
+            - column:
+                constraints:
+                  nullable: false
+                name: account_id
+                type: INTEGER
+            - column:
+                constraints:
+                  nullable: false
+                name: user_id
+                type: INTEGER
+            - column:
+                constraints:
+                  nullable: false
+                name: sales_volume
+                type: numeric(8, 2)
+            - column:
+                constraints:
+                  nullable: false
+                name: venue_name
+                type: VARCHAR(255)
+            - column:
+                name: venue_name_full
+                type: VARCHAR(255)
+            - column:
+                name: address
+                type: VARCHAR(255)
+            - column:
+                name: street_number
+                type: VARCHAR(255)
+            - column:
+                name: latitude
+                type: numeric(8, 2)
+            - column:
+                name: longitude
+                type: numeric(8, 2)
+            - column:
+                name: google_place_id
+                type: VARCHAR(255)
+            - column:
+                name: pre_order_display_message
+                type: TEXT
+            - column:
+                name: post_order_display_message
+                type: TEXT
+            - column:
+                constraints:
+                  nullable: false
+                name: location_is_manual
+                type: INTEGER
+            - column:
+                constraints:
+                  nullable: false
+                name: is_live
+                type: BOOLEAN
+            - column:
+                name: created_at
+                type: TIMESTAMP WITH TIME ZONE
+            - column:
+                name: updated_at
+                type: TIMESTAMP WITH TIME ZONE
+            - column:
+                name: deleted_at
+                type: TIMESTAMP WITH TIME ZONE
+            - column:
+                constraints:
+                  nullable: false
+                name: barcode_type
+                type: VARCHAR(255)
+            - column:
+                constraints:
+                  nullable: false
+                name: ticket_border_color
+                type: VARCHAR(255)
+            - column:
+                constraints:
+                  nullable: false
+                name: ticket_bg_color
+                type: VARCHAR(255)
+            - column:
+                constraints:
+                  nullable: false
+                name: ticket_text_color
+                type: VARCHAR(255)
+            - column:
+                constraints:
+                  nullable: false
+                name: ticket_sub_text_color
+                type: VARCHAR(255)
+            - column:
+                name: google_tag_manager_code
+                type: VARCHAR(255)
+            - column:
+                constraints:
+                  nullable: false
+                name: social_show_whatsapp
+                type: BOOLEAN
+            - column:
+                constraints:
+                  nullable: false
+                name: checkout_timeout_after
+                type: INTEGER
+            - column:
+                constraints:
+                  nullable: false
+                name: is_1d_barcode_enabled
+                type: BOOLEAN
