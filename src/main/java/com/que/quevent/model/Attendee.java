@@ -19,14 +19,14 @@ public class Attendee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private long id;
 
     @ManyToOne
     @JoinColumn(name="order_id")
     private Order order;
 
     @Column(name = "ticket_id", nullable = false)
-    private Integer ticketId;
+    private int ticketId;
 
     @ManyToOne
     @JoinColumn(name="event_id", nullable = false)
