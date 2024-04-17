@@ -45,4 +45,9 @@ public class EventController {
     public List<Attendee> getEttendeesByEventId(@RequestParam long eventId) {
         return eventService.findAttendeesByEventId(eventId);
     }
+
+    @GetMapping("/event/get-filtered-events")
+    public List<Event> getFilteredEvents(String[] locations, String[] categories, int startAgeLimit, int endAgeLimit) {
+        return eventService.getEventsByFilters(startAgeLimit, endAgeLimit, locations, categories);
+    }
 }
