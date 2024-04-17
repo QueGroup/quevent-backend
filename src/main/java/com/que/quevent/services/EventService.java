@@ -6,6 +6,9 @@ import com.que.quevent.model.User;
 import com.que.quevent.repositories.EventRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 @Service
@@ -38,5 +41,40 @@ public class EventService {
 
     public List<Attendee> findAttendeesByEventId(long eventId) {
         return eventRepository.findAttendeesByEventId(eventId);
+    }
+
+    public List<Event> getEventsByFilters(int startAgeLimit, int endAgeLimit, String[] locations, String[] categories) {
+        var filteredEvents = new ArrayList<Event>();
+
+        if (locations.length != 0) {
+            filteredEvents.addAll(getEventsByLocations(locations));
+        }
+        if (categories.length != 0) {
+            filteredEvents.addAll(getEventsByCategory(categories));
+        }
+        if (startAgeLimit != 0 && endAgeLimit != 0) {
+            filteredEvents.addAll(getEventsByAgeLimit(startAgeLimit, endAgeLimit));
+        }
+
+
+        return new ArrayList<>(new HashSet<>(filteredEvents));
+    }
+
+    private List<Event> getEventsByAgeLimit(int startAgeLimit, int endAgeLimit) {
+        return eventRepository.findEventByAgeLimit(startAgeLimit, endAgeLimit);
+    }
+
+    private List<Event> getEventsByLocations(String[] locations) {
+        var EventsForLocations = new ArrayList<Event>();
+        Arrays.stream(locations).forEach(x -> EventsForLocations.addAll(eventRepository.findEventByLocation(x)));
+
+        return EventsForLocations;
+    }
+
+    private List<Event> getEventsByCategory(String[] categories) {
+        var EventsForCategories = new ArrayList<Event>();
+        Arrays.stream(categories).forEach(x -> EventsForCategories.addAll(eventRepository.findEventByCategory(x)));
+
+        return EventsForCategories;
     }
 }

@@ -18,7 +18,7 @@ public class Event {
     @NotNull
     private String title;
 
-    private String locations;
+    private String location;
 
     @NotNull
     private String type;
@@ -131,5 +131,11 @@ public class Event {
     @NotNull
     @Column(name="is_1d_barcode_enabled ")
     private int is1dBarcodeEnabled;
+
+    @Column(name="start_age_limit", nullable = false)
+    private int startAgeLimit;
+
+    @Column(name="end", nullable = false)
+    private int endAgeLimit;
 
 }
