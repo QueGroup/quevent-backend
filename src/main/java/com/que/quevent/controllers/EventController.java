@@ -3,18 +3,23 @@ package com.que.quevent.controllers;
 import com.que.quevent.model.Attendee;
 import com.que.quevent.model.Event;
 import com.que.quevent.services.EventService;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
 public class EventController {
 
-    private final EventService eventService;
+    @Autowired
+    private EventService eventService;
 
-    public EventController(EventService eventService) {
-        this.eventService = eventService;
-    }
 
     @PostMapping("/event")
     public void createEvent(@RequestBody Event event) {

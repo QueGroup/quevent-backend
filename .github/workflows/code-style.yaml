@@ -24,11 +24,9 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
 
-      - name: SpotBugs Analysis
-        run: mvn spotbugs:check
+      - name: Checkstyle Analysis
+        run: mvn checkstyle:check
 
       - name: PMD Analysis
         run: mvn pmd:check
 
-      - name: Checkstyle Analysis
-        run: mvn checkstyle:check

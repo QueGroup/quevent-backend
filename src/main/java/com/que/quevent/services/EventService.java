@@ -2,7 +2,6 @@ package com.que.quevent.services;
 
 import com.que.quevent.model.Attendee;
 import com.que.quevent.model.Event;
-import com.que.quevent.model.User;
 import com.que.quevent.repositories.EventRepository;
 import org.springframework.stereotype.Service;
 
