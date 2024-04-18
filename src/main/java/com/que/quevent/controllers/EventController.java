@@ -6,6 +6,7 @@ import com.que.quevent.services.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,37 +22,37 @@ public class EventController {
     private EventService eventService;
 
 
-    @PostMapping("/event")
+    @PostMapping("/events")
     public void createEvent(@RequestBody Event event) {
         eventService.createEvent(event);
     }
 
-    @GetMapping("/event")
-    public Event getEventById(@RequestParam long eventId) {
+    @GetMapping("/events/{eventId}")
+    public Event getEventById(@PathVariable long eventId) {
         return eventService.getEventById(eventId);
     }
 
-    @DeleteMapping("/event")
+    @DeleteMapping("/events")
     public void deleteEvent(@RequestBody Event event) {
         eventService.deleteEvent(event);
     }
 
-    @DeleteMapping("/event/delete-by-id")
-    public void deleteEventById(@RequestParam long eventId) {
+    @DeleteMapping("/events/{id}")
+    public void deleteEventById(@PathVariable long eventId) {
         eventService.deleteEventById(eventId);
     }
 
-    @PutMapping("/event")
+    @PutMapping("/events")
     public void uodateEvent(@RequestBody Event event) {
         eventService.updateEvent(event);
     }
 
-    @GetMapping("/event/get-attendees")
+    @GetMapping("/events/{id}/attendees")
     public List<Attendee> getEttendeesByEventId(@RequestParam long eventId) {
         return eventService.findAttendeesByEventId(eventId);
     }
 
-    @GetMapping("/event/get-filtered-events")
+    @GetMapping("/events")
     public List<Event> getFilteredEvents(String[] locations, String[] categories, int startAgeLimit, int endAgeLimit) {
         return eventService.getEventsByFilters(startAgeLimit, endAgeLimit, locations, categories);
     }
