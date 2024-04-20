@@ -1,5 +1,7 @@
 package com.que.quevent.services;
 
+import com.que.quevent.exeptions.EventAlreadyExistsException;
+import com.que.quevent.exeptions.EventNotExistsException;
 import com.que.quevent.model.Attendee;
 import com.que.quevent.model.Event;
 import com.que.quevent.repositories.EventRepository;
@@ -19,19 +21,33 @@ public class EventService {
     }
 
     public void createEvent(Event event) {
+        if (eventRepository.existsById(event.getId())) {
+            throw new EventAlreadyExistsException("Такое мероприятие уже существует");
+        }
         eventRepository.save(event);
     }
 
     public void deleteEvent(Event event) {
-        eventRepository.delete(event);
+        if (eventRepository.existsById(event.getId())) {
+            eventRepository.delete(event);
+        }
+        throw new EventNotExistsException("Такого мероприятия не существует");
     }
 
     public void deleteEventById(long eventId) {
-        eventRepository.deleteById(eventId);
+        if (eventRepository.existsById(eventId)) {
+            eventRepository.deleteById(eventId);
+        }
+        throw new EventNotExistsException("Такого мероприятия не существует");
+
     }
 
     public Event getEventById(long eventId) {
-        return eventRepository.findById(eventId).orElse(null);
+        var event = eventRepository.findById(eventId);
+        if (event.isEmpty()) {
+            throw new EventNotExistsException("Такого мероприятия не существует");
+        }
+        return event.get();
     }
 
     public void updateEvent(Event event) {
