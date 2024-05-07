@@ -22,8 +22,3 @@
 
 ## 📄 License 
 **This project is licensed under the** [GPL-3.0 License](LICENSE)
-
-
-<div align="center">
-<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWptdmh0bGxqeWRpd2pubmk1YTk4MHQxbmR5ODFucDk1NjZvcnh6OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QDjpIL6oNCVZ4qzGs7/giphy.gif" width="500"/>
-</div>
